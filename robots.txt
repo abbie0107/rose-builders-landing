@@ -1,1 +1,4 @@
-<REPLACE_ROBOTS>
+User-agent: *
+Allow: /
+
+Sitemap: https://rose-builders-landing.netlify.app/sitemap.xml
