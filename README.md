@@ -17,11 +17,26 @@ Hand-written static HTML/CSS/JS — no framework, no build step. Self-hosted var
 - `netlify.toml` — caching + security headers
 - `robots.txt`, `sitemap.xml`
 
+## ⚠️ Binary assets
+
+This repo currently contains the full text source. The binary assets (`assets/img/*`, `assets/fonts/*`) ship separately as `rose-builders-landing.zip` (delivered with the project handover). To complete the repo, unzip it and commit the two folders:
+
+```bash
+unzip rose-builders-landing.zip -d rose-builders-landing
+cd rose-builders-landing
+git init && git add -A
+git commit -m "Complete site with binary assets"
+git remote add origin git@github.com:abbie0107/rose-builders-landing.git
+git push -f origin main   # one-time: replaces the text-only history
+```
+
+(Or simply drag the `assets` folder into the repo via GitHub's web upload.)
+
 ## Deploy (Netlify)
 
-**Drag-and-drop:** zip the repo contents and drop at [app.netlify.com/drop](https://app.netlify.com/drop), then set the site name to `rose-builders-landing` so the canonical/OG URLs line up.
+**Fastest — drag-and-drop:** drop `rose-builders-landing.zip` at [app.netlify.com/drop](https://app.netlify.com/drop), then set the site name to `rose-builders-landing` (Site settings → Change site name) so the canonical/OG/sitemap URLs line up.
 
-**Git-connected:** import this repo in Netlify — no build command, publish directory is the repo root (`/`). The `netlify.toml` headers apply automatically.
+**Git-connected:** once the binary assets are committed (above), import this repo in Netlify — no build command, publish directory is the repo root (`/`). The `netlify.toml` headers apply automatically.
 
 The enquiry form is wired for Netlify Forms (honeypot included) and submits to `/thank-you/`.
 
